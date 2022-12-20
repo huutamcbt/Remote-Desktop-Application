@@ -25,7 +25,7 @@ public class MainFrame  extends javax.swing.JFrame{
     public static MainPanel Panel;
 
     public MainFrame(){
-        Controller.RDP.Server.Server server = new Controller.RDP.Server.Server(); 
+        Service.RDP.Server.Server server = new Service.RDP.Server.Server(); 
         java.lang.Thread thread = new java.lang.Thread(server);
         thread.setDaemon(true);
         thread.start();
@@ -46,7 +46,7 @@ public class MainFrame  extends javax.swing.JFrame{
                     MainFrame.this.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
                     try {
-                        Controller.FTPServer.Server.Start.stopServer();
+                        Service.FTPServer.Server.Start.stopServer();
                     } catch (Exception ex) {
                       
                     } 
@@ -60,7 +60,7 @@ public class MainFrame  extends javax.swing.JFrame{
 
     private void updateStatus(){
         try {
-            if(Controller.RDP.Server.Server.running()){
+            if(Service.RDP.Server.Server.running()){
                 status.setIcon(new javax.swing.ImageIcon("Images/16_circle_green.png"));
                 status.setText("Ready to connect");
                 status.setIconTextGap(20);
@@ -129,7 +129,7 @@ public class MainFrame  extends javax.swing.JFrame{
                              javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                         if(choice == javax.swing.JOptionPane.OK_OPTION){
                             if(ftpServerChoice == true){
-                                Controller.FTPServer.Server.Start.stopServer();
+                                Service.FTPServer.Server.Start.stopServer();
                             }
                             homeChoice = true;
                             onlineContactChoice = false;
@@ -178,7 +178,7 @@ public class MainFrame  extends javax.swing.JFrame{
                              javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                         if(choice == javax.swing.JOptionPane.OK_OPTION){
                             if(ftpServerChoice == true){
-                                Controller.FTPServer.Server.Start.stopServer();
+                                Service.FTPServer.Server.Start.stopServer();
                             }
                             onlineContactChoice = true;
                             homeChoice = false;
