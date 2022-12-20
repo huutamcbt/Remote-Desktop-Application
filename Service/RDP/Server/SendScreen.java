@@ -1,4 +1,4 @@
-package Controller.RDP.Server;
+package Service.RDP.Server;
 
 import java.io.IOException;
 

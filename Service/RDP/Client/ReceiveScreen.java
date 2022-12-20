@@ -1,4 +1,4 @@
-package Controller.RDP.Client;
+package Service.RDP.Client;
 
 public class ReceiveScreen extends java.lang.Thread{
     private java.net.Socket socket = null;

@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import Controller.FTPServer.Client.Start;
+import Service.FTPServer.Client.Start;
 
 public class MainPanel extends javax.swing.JFrame implements java.awt.event.ActionListener, java.awt.event.KeyListener, java.awt.event.MouseListener{
     private javax.swing.JLabel label;
@@ -293,7 +293,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
                 if(controlComputerConnection.isEnabled() == true){
                     java.lang.System.out.println(getControlComputerID());
                     java.lang.System.out.println(getControlComputerPassword());
-                    new Controller.RDP.Client.Client(getControlComputerID(), getControlComputerPassword());
+                    new Service.RDP.Client.Client(getControlComputerID(), getControlComputerPassword());
                 }
             }
         });
@@ -500,15 +500,15 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
     }
     
     public void initFTPServerPanel(){
-        new Controller.FTPServer.Server.Start(clientFiles, clientList, serverList, serverDLM);
-        java.lang.System.out.println(Controller.FTPServer.Server.Start.getIpAddress());
-        java.lang.System.out.println(Controller.FTPServer.Server.Start.getPassword());
+        new Service.FTPServer.Server.Start(clientFiles, clientList, serverList, serverDLM);
+        java.lang.System.out.println(Service.FTPServer.Server.Start.getIpAddress());
+        java.lang.System.out.println(Service.FTPServer.Server.Start.getPassword());
         MainFrame.mainPanel.setLayout(new java.awt.GridBagLayout());
         MainFrame.mainPanel.setPreferredSize(new java.awt.Dimension(800, 700));
         gc = new java.awt.GridBagConstraints();
         
         // Client ID Label
-        label = new javax.swing.JLabel("Your ID:   " + Controller.FTPServer.Server.Start.getIpAddress());
+        label = new javax.swing.JLabel("Your ID:   " + Service.FTPServer.Server.Start.getIpAddress());
         label.setFont(new java.awt.Font(null, java.awt.Font.BOLD, 15));
         label.setPreferredSize(new java.awt.Dimension(270,20));
 
@@ -521,7 +521,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
         MainFrame.mainPanel.add(label, gc);
 
         // Client Password label
-        label = new javax.swing.JLabel("Your Password:   " + Controller.FTPServer.Server.Start.getPassword());
+        label = new javax.swing.JLabel("Your Password:   " + Service.FTPServer.Server.Start.getPassword());
         label.setFont(new java.awt.Font(null, java.awt.Font.BOLD, 15));
         label.setPreferredSize(new java.awt.Dimension(270,20));
 
@@ -705,10 +705,10 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
         
     }
     private void generateAllowControlPassword(){
-        allowControlPassword.setText(Controller.RDP.Server.Server.getPassword()); 
+        allowControlPassword.setText(Service.RDP.Server.Server.getPassword()); 
     }
     private void generateAllowControlID() throws java.net.UnknownHostException{
-        allowControlID.setText(Controller.RDP.Server.Server.getIpAddress());
+        allowControlID.setText(Service.RDP.Server.Server.getIpAddress());
        
     }
     public int getAllowControlPassword(){
@@ -869,7 +869,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
             }
         }
         if(e.getSource() == connection){
-            client = new Controller.FTPServer.Client.Start(partnerID.getText(), partnerPassword.getText());
+            client = new Service.FTPServer.Client.Start(partnerID.getText(), partnerPassword.getText());
             
             if(client.verifyConnection(clientList, serverList, serverDLM) == false){
                 client = null;
@@ -889,7 +889,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
                             int choice = javax.swing.JOptionPane.showConfirmDialog(this, "This file already exist. Do you want to replace it?", "Warning", javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                             if(choice == javax.swing.JOptionPane.OK_OPTION){
                                 if(client != null){
-                                    client.downloadFile(serverList.getSelectedValue(), file, Controller.FTPServer.Speed.SLOW.getSpeed(), serverList.getSelectedIndex());
+                                    client.downloadFile(serverList.getSelectedValue(), file, Service.FTPServer.Speed.SLOW.getSpeed(), serverList.getSelectedIndex());
                                 }
                                 continueloop = false;
                                 String fileName = serverList.getSelectedValue();
@@ -900,7 +900,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
                         }
                         else{
                             if(client != null){
-                                client.downloadFile(serverList.getSelectedValue(), file, Controller.FTPServer.Speed.SLOW.getSpeed(), serverList.getSelectedIndex());
+                                client.downloadFile(serverList.getSelectedValue(), file, Service.FTPServer.Speed.SLOW.getSpeed(), serverList.getSelectedIndex());
                             }
                             continueloop = false;
                             String fileName = serverList.getSelectedValue();
@@ -935,7 +935,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
                             int choice = javax.swing.JOptionPane.showConfirmDialog(this, "This file already exist. Do you want to replace it?", "Warning", javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                             if(choice == javax.swing.JOptionPane.OK_OPTION){
                                 if(client != null){
-                                    client.downloadFile(serverList.getSelectedValue(), file, Controller.FTPServer.Speed.MEDIUM.getSpeed(), serverList.getSelectedIndex());
+                                    client.downloadFile(serverList.getSelectedValue(), file, Service.FTPServer.Speed.MEDIUM.getSpeed(), serverList.getSelectedIndex());
                                 }
                                 continueloop = false;
                                 String fileName = serverList.getSelectedValue();
@@ -946,7 +946,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
                         }
                         else{
                             if(client != null){
-                                client.downloadFile(serverList.getSelectedValue(), file, Controller.FTPServer.Speed.MEDIUM.getSpeed(), serverList.getSelectedIndex());
+                                client.downloadFile(serverList.getSelectedValue(), file, Service.FTPServer.Speed.MEDIUM.getSpeed(), serverList.getSelectedIndex());
                             }
                             continueloop = false;
                             String fileName = serverList.getSelectedValue();
@@ -982,7 +982,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
                             int choice = javax.swing.JOptionPane.showConfirmDialog(this, "This file already exist. Do you want to replace it?", "Warning", javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                             if(choice == javax.swing.JOptionPane.OK_OPTION){
                                 if(client != null){
-                                    client.downloadFile(serverList.getSelectedValue(), file, Controller.FTPServer.Speed.FAST.getSpeed(), serverList.getSelectedIndex());
+                                    client.downloadFile(serverList.getSelectedValue(), file, Service.FTPServer.Speed.FAST.getSpeed(), serverList.getSelectedIndex());
                                 }
                                 
                                 continueloop = false;
@@ -995,7 +995,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
                         else{
                             
                             if(client != null){
-                                client.downloadFile(serverList.getSelectedValue(), file, Controller.FTPServer.Speed.FAST.getSpeed(), serverList.getSelectedIndex());
+                                client.downloadFile(serverList.getSelectedValue(), file, Service.FTPServer.Speed.FAST.getSpeed(), serverList.getSelectedIndex());
                             }
                             
                             continueloop = false;

@@ -1,4 +1,4 @@
-package Controller.FTPServer.Client;
+package Service.FTPServer.Client;
 
 import java.beans.PropertyChangeEvent;
 import java.io.IOException;
@@ -51,13 +51,13 @@ public class Start implements java.beans.PropertyChangeListener{
                 java.lang.System.out.println(fileLength);
                 dos.writeInt(speed);
                 dos.flush();
-                if(speed == Controller.FTPServer.Speed.SLOW.getSpeed()){
+                if(speed == Service.FTPServer.Speed.SLOW.getSpeed()){
                     buffer = new byte[1024];
                 }
-                if(speed == Controller.FTPServer.Speed.MEDIUM.getSpeed()){
+                if(speed == Service.FTPServer.Speed.MEDIUM.getSpeed()){
                     buffer = new byte[1024*1024];
                 }
-                if(speed == Controller.FTPServer.Speed.FAST.getSpeed()){
+                if(speed == Service.FTPServer.Speed.FAST.getSpeed()){
                     buffer = new byte[50*1024*1024];
                 }
                 receiveFile(fileLength);

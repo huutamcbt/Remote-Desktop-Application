@@ -1,4 +1,4 @@
-package Controller.FTPServer.Server;
+package Service.FTPServer.Server;
 
 import java.io.IOException;
 
@@ -92,13 +92,13 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
             for (int i = 0; i < buffer.length; i++) {
                 buffer[i] = 0;
             }
-            if(speed == Controller.FTPServer.Speed.SLOW.getSpeed()){
+            if(speed == Service.FTPServer.Speed.SLOW.getSpeed()){
                 buffer = new byte[1024];
             }
-            if(speed == Controller.FTPServer.Speed.MEDIUM.getSpeed()){
+            if(speed == Service.FTPServer.Speed.MEDIUM.getSpeed()){
                 buffer = new byte[1024*1024];
             }
-            if(speed == Controller.FTPServer.Speed.FAST.getSpeed()){
+            if(speed == Service.FTPServer.Speed.FAST.getSpeed()){
                 buffer = new byte[50*1024*1024];
             }
             
@@ -150,15 +150,15 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
             try {
                 if(request[0].equals("DOWNLOAD FileName FTP/1.0")){
                     dos.writeUTF(createValidResponse());
-                    return Controller.FTPServer.Method.DOWNLOAD.getAbbrev();    
+                    return Service.FTPServer.Method.DOWNLOAD.getAbbrev();    
                 }
                 if(request[0].equals("ADD FileName FTP/1.0")){
                     dos.writeUTF(createValidResponse());
-                    return Controller.FTPServer.Method.ADD.getAbbrev();
+                    return Service.FTPServer.Method.ADD.getAbbrev();
                 }
                 if(request[0].equals("REMOVE FileName FTP/1.0")){
                     dos.writeUTF(createValidResponse());
-                    return Controller.FTPServer.Method.REMOVE.getAbbrev();
+                    return Service.FTPServer.Method.REMOVE.getAbbrev();
                 }
             } catch (Exception e) {
                 //TODO: handle exception

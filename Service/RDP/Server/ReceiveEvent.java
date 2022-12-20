@@ -1,4 +1,4 @@
-package Controller.RDP.Server;
+package Service.RDP.Server;
 
 public class ReceiveEvent extends java.lang.Thread{
     private java.net.Socket socket;

@@ -1,4 +1,4 @@
-package Controller.RDP.Client;
+package Service.RDP.Client;
 
 import java.io.IOException;
 
@@ -65,21 +65,21 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
     }
     @Override
     public void keyPressed(java.awt.event.KeyEvent e) {
-        writer.println(Controller.RDP.Server.Commands.PRESS_KEY.getAbbrev());
+        writer.println(Service.RDP.Server.Commands.PRESS_KEY.getAbbrev());
         writer.println(e.getKeyCode());
         writer.flush();
         java.lang.System.out.println("Press key");
     }
     @Override
     public void keyReleased(java.awt.event.KeyEvent e) {
-        writer.println(Controller.RDP.Server.Commands.RELEASE_KEY.getAbbrev());
+        writer.println(Service.RDP.Server.Commands.RELEASE_KEY.getAbbrev());
         writer.println(e.getKeyCode());
         writer.flush();
         java.lang.System.out.println("Release key");
     }
     @Override
     public void mouseWheelMoved(java.awt.event.MouseWheelEvent e) {
-        writer.println(Controller.RDP.Server.Commands.WHEEL_MOUSE.getAbbrev());
+        writer.println(Service.RDP.Server.Commands.WHEEL_MOUSE.getAbbrev());
         int value = e.getWheelRotation();
         if(value < 0){
             writer.println(value);
@@ -94,7 +94,7 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
     }
     @Override
     public void mouseDragged(java.awt.event.MouseEvent e) { 
-        writer.println(Controller.RDP.Server.Commands.DRAG_MOUSE.getAbbrev());
+        writer.println(Service.RDP.Server.Commands.DRAG_MOUSE.getAbbrev());
         // Request server press the left button 
         if(lock == false){
             writer.println(java.awt.event.InputEvent.BUTTON1_DOWN_MASK);
@@ -124,7 +124,7 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
         if(width == Config.SMALL_SCREEN_SIZE.getWidth() && height == Config.SMALL_SCREEN_SIZE.getHeight()){
             double xScale = (double)width/Config.SMALL_PANEL_SIZE.getWidth();
             double yScale = (double)height/Config.SMALL_PANEL_SIZE.getHeight();
-            writer.println(Controller.RDP.Server.Commands.MOVE_MOUSE.getAbbrev());
+            writer.println(Service.RDP.Server.Commands.MOVE_MOUSE.getAbbrev());
             writer.println((int)(e.getX()*xScale));
             writer.println((int)(e.getY()*yScale));
             writer.flush();
@@ -132,7 +132,7 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
         if(width == Config.LARGE_SCREEN_SIZE.getWidth() && height == Config.LARGE_SCREEN_SIZE.getHeight()){
             double xScale = (double)width/Config.LARGE_PANEL_SIZE.getWidth();
             double yScale = (double)height/Config.LARGE_PANEL_SIZE.getHeight();
-            writer.println(Controller.RDP.Server.Commands.MOVE_MOUSE.getAbbrev());
+            writer.println(Service.RDP.Server.Commands.MOVE_MOUSE.getAbbrev());
             writer.println((int)(e.getX()*xScale));
             writer.println((int)(e.getY()*yScale));
             writer.flush();
@@ -141,7 +141,7 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
     }
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
-        // writer.println(Controller.Server.Commands.CLICK_MOUSE.getAbbrev());
+        // writer.println(Service.Server.Commands.CLICK_MOUSE.getAbbrev());
         // int button = e.getButton();
         // if(button == java.awt.event.MouseEvent.BUTTON1){
         //     writer.println(java.awt.event.InputEvent.BUTTON1_DOWN_MASK);
@@ -160,7 +160,7 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
     }
     @Override
     public void mousePressed(java.awt.event.MouseEvent e) {
-        writer.println(Controller.RDP.Server.Commands.PRESS_MOUSE.getAbbrev());
+        writer.println(Service.RDP.Server.Commands.PRESS_MOUSE.getAbbrev());
         int button = e.getButton();
         if(button == java.awt.event.MouseEvent.BUTTON1){
             writer.println(java.awt.event.InputEvent.BUTTON1_DOWN_MASK);
@@ -176,7 +176,7 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
     }
     @Override
     public void mouseReleased(java.awt.event.MouseEvent e) {
-        writer.println(Controller.RDP.Server.Commands.RELEASE_MOUSE.getAbbrev());
+        writer.println(Service.RDP.Server.Commands.RELEASE_MOUSE.getAbbrev());
         int button = e.getButton();
         if(button == java.awt.event.MouseEvent.BUTTON1){
             writer.println(java.awt.event.InputEvent.BUTTON1_DOWN_MASK);

@@ -1,4 +1,4 @@
-package Controller.RDP.Client;
+package Service.RDP.Client;
 
 public class Client extends java.lang.Thread{
     private String ipAddress;
