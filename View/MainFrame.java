@@ -1,4 +1,21 @@
+
+/**
+ * Provides the classes necessary to create an applet and the classes an applet uses 
+ * to communicate with its applet context. 
+ * <p>
+ * The applet framework involves two entities: 
+ * the applet and the applet context. An applet is an embeddable window (see the 
+ * {@link java.awt.Panel} class) with a few extra methods that the applet context 
+ * can use to initialize, start, and stop the applet.
+ * 
+ * @since 1.0
+ * @see java.awt
+ * @author Nguyen Huu Tam
+ */
+
 package View;
+
+
 
 public class MainFrame  extends javax.swing.JFrame{
     private javax.swing.JMenuBar menuBar;
@@ -61,13 +78,13 @@ public class MainFrame  extends javax.swing.JFrame{
     private void updateStatus(){
         try {
             if(Service.RDP.Server.Server.running()){
-                status.setIcon(new javax.swing.ImageIcon("Images/16_circle_green.png"));
+                status.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/16_circle_green.png")));
                 status.setText("Ready to connect");
                 status.setIconTextGap(20);
                 footer.add(status,java.awt.BorderLayout.LINE_START);
                 footer.add(copyright,java.awt.BorderLayout.LINE_END);
             }else{
-                status.setIcon(new javax.swing.ImageIcon("Images/16_circle_red.png"));
+                status.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/16_circle_red.png")));
                 status.setText("Can't find the IP address");
                 status.setIconTextGap(20);
                 footer.add(status,java.awt.BorderLayout.LINE_START);
@@ -89,9 +106,9 @@ public class MainFrame  extends javax.swing.JFrame{
 
         initMenuBar();
         
-        home = new javax.swing.JLabel((new javax.swing.ImageIcon("Images/house_3.png"))); 
-        onlineContact = new javax.swing.JLabel((new javax.swing.ImageIcon("Images/gnome_x_office_address_book.png"))); 
-        ftpServer = new javax.swing.JLabel(new javax.swing.ImageIcon("Images/ftp-server.png"));
+        home = new javax.swing.JLabel((new javax.swing.ImageIcon(getClass().getResource("/Images/house_3.png")))); 
+        onlineContact = new javax.swing.JLabel((new javax.swing.ImageIcon(getClass().getResource("/Images/gnome_x_office_address_book.png")))); 
+        ftpServer = new javax.swing.JLabel(new javax.swing.ImageIcon(getClass().getResource("/Images/ftp-server.png")));
         javax.swing.border.Border leftPanelBorder = javax.swing.BorderFactory.createMatteBorder(0,0,0,1,new java.awt.Color(189, 186, 191 )); 
         java.awt.FlowLayout leftPanelLayout = new java.awt.FlowLayout(java.awt.FlowLayout.CENTER);
         Panel.initHomePanel();

@@ -62,7 +62,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
     public MainPanel(){
         
         panel = new javax.swing.JPanel();
-        frequentlyQuestion = new javax.swing.JButton(new javax.swing.ImageIcon("Images/help.png"));
+        frequentlyQuestion = new javax.swing.JButton(new javax.swing.ImageIcon(getClass().getResource("/Images/help.png")));
         remotePanel = new javax.swing.JPanel();
         gc = new java.awt.GridBagConstraints();
         allowControlPassword = new javax.swing.JTextField();
@@ -145,12 +145,12 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
         // Create allowing control panel
         label = new javax.swing.JLabel();
         label.setPreferredSize(new java.awt.Dimension(MainFrame.rightPnWidth/2 -90,40));
-        label.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon("Images/satellite_vista.png").getImage().getScaledInstance(32, 32, java.awt.Image.SCALE_SMOOTH)));
+        label.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/satellite_vista.png")).getImage().getScaledInstance(32, 32, java.awt.Image.SCALE_SMOOTH)));
         label.setText("Allow Remote Control");
         label.setFont(new java.awt.Font("",java.awt.Font.BOLD,15));
         label.setBorder(border1);
         label.setIconTextGap(20);
-
+        
         gc.fill = java.awt.GridBagConstraints.HORIZONTAL;  
         gc.insets = new java.awt.Insets(15,50,15,50);
         gc.gridwidth = 2;
@@ -161,7 +161,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
         // Create controlling computer panel
         label = new javax.swing.JLabel();
         label.setPreferredSize(new java.awt.Dimension(MainFrame.rightPnWidth/2 -90,40));
-        label.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon("Images/profile.png").getImage().getScaledInstance(32, 32, java.awt.Image.SCALE_SMOOTH)));
+        label.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon( getClass().getResource("/Images/profile.png")).getImage().getScaledInstance(32, 32, java.awt.Image.SCALE_SMOOTH)));
         label.setText("Control a Remote Computer");
         label.setFont(new java.awt.Font("",java.awt.Font.BOLD, 15));
         label.setBorder(border1);
@@ -284,7 +284,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
         // Create the connection button
         
         controlComputerConnection.setText("<html>Connect to partner</html>");
-        controlComputerConnection.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon("Images/forward.png").getImage().getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH)));
+        controlComputerConnection.setIcon(new javax.swing.ImageIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/forward.png")).getImage().getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH)));
         controlComputerConnection.setIconTextGap(20);
         controlComputerConnection.setFocusPainted(false);
         controlComputerConnection.addMouseListener(new java.awt.event.MouseAdapter(){
@@ -575,7 +575,7 @@ public class MainPanel extends javax.swing.JFrame implements java.awt.event.Acti
 
         // connection button
         connection.setIcon(new javax.swing.ImageIcon(
-            new javax.swing.ImageIcon("Images/forward.png").getImage().getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH)));
+            new javax.swing.ImageIcon(getClass().getResource("/Images/forward.png")).getImage().getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH)));
         connection.setFocusPainted(false);
         connection.setEnabled(false);
         connection.setIconTextGap(20);
