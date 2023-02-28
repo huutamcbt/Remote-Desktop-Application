@@ -382,7 +382,7 @@ public class MainFrame  extends javax.swing.JFrame{
         // Create Menu Items for Help Menu
         javax.swing.JMenuItem miActiveLicense = new javax.swing.JMenuItem("ActiveLicense");
         javax.swing.JMenuItem miShowBannerPreview = new javax.swing.JMenuItem("Show Banner Preview");
-        javax.swing.JMenuItem miUltraViewerWebsite = new javax.swing.JMenuItem("UltraViewer website");
+        javax.swing.JMenuItem miUltraViewerWebsite = new javax.swing.JMenuItem("Remote Desktop App website");
         javax.swing.JMenuItem miCheckForNewVersion = new javax.swing.JMenuItem("Check for new version");
         javax.swing.JMenuItem miAbout = new javax.swing.JMenuItem("About");
 
