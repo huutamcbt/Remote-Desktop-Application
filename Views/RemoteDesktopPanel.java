@@ -58,10 +58,8 @@ public class RemoteDesktopPanel extends JPanel implements java.awt.event.ActionL
                 try {
                     java.awt.Desktop.getDesktop().browse(new java.net.URI("https://www.archlinux.org"));
                 } catch (IOException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 } catch (URISyntaxException e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
             }
@@ -159,7 +157,6 @@ public class RemoteDesktopPanel extends JPanel implements java.awt.event.ActionL
 
         // Create the server Password
         remoteDesktop.label = new javax.swing.JLabel("Password");
-        //gc.anchor = java.awt.GridBagConstraints.PAGE_START;
         remoteDesktop.gc.gridx = 0;
         remoteDesktop.gc.gridy = 3;
         remoteDesktop.gc.insets = new java.awt.Insets(0,50,0,0);
@@ -341,37 +338,31 @@ public class RemoteDesktopPanel extends JPanel implements java.awt.event.ActionL
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
         if(e.getSource() == remoteDesktop.controlComputerID){
             if(java.util.Objects.equals(remoteDesktop.controlComputerID.getText(), "") == false){
                 if(java.util.Objects.equals(remoteDesktop.controlComputerPassword.getText(), "") == false){
@@ -396,19 +387,16 @@ public class RemoteDesktopPanel extends JPanel implements java.awt.event.ActionL
 
     @Override
     public void keyPressed(KeyEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         
     }
 }

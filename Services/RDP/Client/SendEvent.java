@@ -60,7 +60,6 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
     }
     @Override
     public void keyTyped(java.awt.event.KeyEvent e) {
-        // TODO Auto-generated method stub
         
     }
     @Override
@@ -116,8 +115,6 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
         }
         lock = true;
         java.lang.System.out.println("Mouse drag");
-        // java.lang.System.out.println(e.getX());
-        // java.lang.System.out.println(e.getY());
     }
     @Override
     public void mouseMoved(java.awt.event.MouseEvent e) {
@@ -137,7 +134,6 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
             writer.println((int)(e.getY()*yScale));
             writer.flush();
         }
-        //java.lang.System.out.println("Mouse move");
     }
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
@@ -172,7 +168,6 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
             writer.println(java.awt.event.InputEvent.BUTTON3_DOWN_MASK);
         }
         writer.flush();
-        //java.lang.System.out.println("Mouse press");
     }
     @Override
     public void mouseReleased(java.awt.event.MouseEvent e) {
@@ -193,12 +188,10 @@ public class SendEvent implements java.awt.event.KeyListener, java.awt.event.Mou
     }
     @Override
     public void mouseEntered(java.awt.event.MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
     @Override
     public void mouseExited(java.awt.event.MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 }

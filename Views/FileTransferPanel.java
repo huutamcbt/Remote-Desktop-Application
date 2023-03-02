@@ -121,7 +121,6 @@ public class FileTransferPanel implements KeyListener, MouseListener {
         fileTransfer.connection.setFocusPainted(false);
         fileTransfer.connection.setEnabled(false);
         fileTransfer.connection.setIconTextGap(20);
-        //connection.setPreferredSize(new java.awt.Dimension(70,25));
 
         fileTransfer.gc.gridx = 4;
         fileTransfer.gc.gridy = 1;
@@ -261,7 +260,6 @@ public class FileTransferPanel implements KeyListener, MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        // TODO Auto-generated method stub
          // Choice button clicked event in FTP Server
          if(e.getSource() == fileTransfer.choiceButton){
             fileTransfer.fc.setFileSelectionMode(javax.swing.JFileChooser.FILES_AND_DIRECTORIES);
@@ -460,31 +458,26 @@ public class FileTransferPanel implements KeyListener, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
         if(e.getSource() == fileTransfer.partnerID){
             if(java.util.Objects.equals(fileTransfer.partnerID.getText(), "") == false){
                 if(java.util.Objects.equals(fileTransfer.partnerPassword.getText(), "") == false){
@@ -509,13 +502,11 @@ public class FileTransferPanel implements KeyListener, MouseListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
         
     }
 }

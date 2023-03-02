@@ -19,7 +19,6 @@ public class SendScreen extends java.lang.Thread{
         try {
             dos = new java.io.DataOutputStream(byteSocket.getOutputStream());
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         this.setDaemon(true);
@@ -31,7 +30,7 @@ public class SendScreen extends java.lang.Thread{
             os = socket.getOutputStream();
             
         } catch (Exception e) {
-            //java.lang.System.out.println(e);
+
         }
         java.awt.image.BufferedImage image;
         
@@ -42,7 +41,7 @@ public class SendScreen extends java.lang.Thread{
                 
                 javax.imageio.ImageIO.write(image, "jpeg", os);
             } catch (java.io.IOException e1) {
-                //e1.printStackTrace();
+
             }
 
             
@@ -52,7 +51,7 @@ public class SendScreen extends java.lang.Thread{
             socket.close();
             os.close();
         } catch (java.io.IOException e) {
-            //e.printStackTrace();
+            
         }
     }
     public void stopLoop(){

@@ -1,6 +1,5 @@
 package Services.RDP.Client;
 
-import java.awt.*;
 
 public class ReceiveScreen extends java.lang.Thread {
     private java.net.Socket socket = null;
@@ -84,7 +83,7 @@ public class ReceiveScreen extends java.lang.Thread {
                         } while (!(sum > 100000 && bytes[sum - 2] == (byte) -1 && bytes[sum - 1] == (byte) -39)
                                 && count < 120);
                     } catch (Exception e) {
-                        // TODO: handle exception
+                        
                     }
                    
                     image = javax.imageio.ImageIO.read(new java.io.ByteArrayInputStream(bytes));

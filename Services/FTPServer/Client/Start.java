@@ -62,9 +62,6 @@ public class Start implements java.beans.PropertyChangeListener{
                 }
                 receiveFile(fileLength);
             }
-            // fos.close();
-            // is.close();
-            // os.close();
             java.lang.System.out.println("Finish");
             return null;
         }
@@ -93,7 +90,7 @@ public class Start implements java.beans.PropertyChangeListener{
                     setProgress(progress);
                 } while (progress < 100);
             } catch (Exception e) {
-                //TODO: handle exception
+            
             }
             
         }
@@ -123,7 +120,6 @@ public class Start implements java.beans.PropertyChangeListener{
         try {
             
             sock = new java.net.Socket(ipAddress, port);
-            //sock.setSoTimeout(120000);
             is = sock.getInputStream();
             os = sock.getOutputStream();
             dis = new java.io.DataInputStream(sock.getInputStream());
@@ -146,10 +142,8 @@ public class Start implements java.beans.PropertyChangeListener{
             }
             
         } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return false;
@@ -173,7 +167,6 @@ public class Start implements java.beans.PropertyChangeListener{
                 createProgressBar();
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
@@ -188,7 +181,7 @@ public class Start implements java.beans.PropertyChangeListener{
                 dos.flush();
             }
         } catch (Exception e) {
-            //TODO: handle exception
+
         }
     }
 
@@ -202,7 +195,7 @@ public class Start implements java.beans.PropertyChangeListener{
                 dos.flush();
             }
         } catch (Exception e) {
-            //TODO: handle exception
+        
         }
     }
 
@@ -260,7 +253,6 @@ public class Start implements java.beans.PropertyChangeListener{
                 dos.flush();
             }
         } catch (IOException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
     }

@@ -39,7 +39,6 @@ public class Client extends java.lang.Thread{
                 ReceiveScreen screen = new ReceiveScreen(sock, byteSocket, width, height, frame, panel);
                 new SendEvent(sock, width, height, frame, panel, screen);
             }
-            //sock.close();   
             
         } catch (java.io.IOException e) {
 

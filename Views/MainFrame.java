@@ -113,7 +113,6 @@ public class MainFrame  extends javax.swing.JFrame{
         mainPanel.add(new RemoteDesktopPanel().getRemoteDesktopPanel());
         
         leftPanel.setBackground(new java.awt.Color(235, 227, 251 ));
-        //rightPanel.setBackground(new java.awt.Color(242, 245, 251));
         footer.setBackground(new java.awt.Color(239, 239, 239));
 
         // Create components for the left panel
@@ -122,7 +121,6 @@ public class MainFrame  extends javax.swing.JFrame{
         // home panel set up some properties
         home.setPreferredSize(new java.awt.Dimension(leftPnWidth-1, leftPnWidth-1));
         home.setOpaque(true);   // Set up this property to color a background
-        //home.setBackground(new java.awt.Color(125, 161, 239));
         home.addMouseListener(new java.awt.event.MouseAdapter(){
             @Override
             public void mouseEntered(java.awt.event.MouseEvent e){
@@ -307,10 +305,7 @@ public class MainFrame  extends javax.swing.JFrame{
             }
             @Override
             public void windowDeactivated(java.awt.event.WindowEvent e) {
-                System.out.println("Window deactivate");
-                // home.setBackground(new java.awt.Color(235, 227, 251 ));
-                // onlineContact.setBackground(new java.awt.Color(235, 227, 251 ));  
-                // ftpServer.setBackground(new java.awt.Color(235, 227, 251 ));             
+                     
             }
 
             public void windowStateChanged(java.awt.event.WindowEvent e) {

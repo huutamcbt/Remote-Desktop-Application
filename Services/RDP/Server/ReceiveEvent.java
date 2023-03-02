@@ -61,7 +61,7 @@ public class ReceiveEvent extends java.lang.Thread{
                             break;
                     }
                 } catch (Exception e) {
-                    // TODO: handle exception
+
                 }
             }
             java.lang.System.out.println("Stop receive event");
@@ -69,11 +69,10 @@ public class ReceiveEvent extends java.lang.Thread{
                 socket.close();
                 scanner.close();
             } catch (Exception e) {
-                //TODO: handle exception
+
             }
         } catch (java.io.IOException e) {
         
-            //e.printStackTrace();
         }
     }
 }

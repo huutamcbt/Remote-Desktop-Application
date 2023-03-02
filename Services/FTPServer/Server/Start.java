@@ -33,7 +33,6 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
                 dis = new java.io.DataInputStream(sock.getInputStream());
                 dos = new java.io.DataOutputStream(sock.getOutputStream());
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             continueLoop = true;
@@ -68,7 +67,6 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
                 socket.close();
                 os.close();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -89,7 +87,7 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
     
                 }
             } catch (Exception e) {
-                //TODO: handle exception
+
             }
             for (int i = 0; i < buffer.length; i++) {
                 buffer[i] = 0;
@@ -116,12 +114,9 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
                     
                     }
                 } while (count > 0);
-                // socket.close();
-                // fis.close();
-                // os.close();
+
                 fis.close();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             for (int i = 0; i< buffer.length; i++) {
@@ -134,7 +129,6 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
                 serverDLM.addElement(fileName);
                 serverList.setModel(serverDLM);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
             
@@ -144,7 +138,7 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
                 int index = dis.readInt();
                 FileTransferPanel.removeFile(index);
             } catch (Exception e) {
-                //TODO: handle exception
+
             }
         }
         private int checkMethod(String r){
@@ -163,23 +157,11 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
                     return Services.FTPServer.Method.REMOVE.getAbbrev();
                 }
             } catch (Exception e) {
-                //TODO: handle exception
             }
     
             return -1;
         }
-        // public static void stopThread(){
-        //     try {
-        //         is.close();
-        //         os.close();
-        //         dis.close();
-        //         dos.close();
-        //         socket.close();
-        //     } catch (IOException e) {
-        //         // TODO Auto-generated catch block
-        //         e.printStackTrace();
-        //     }
-        // }
+
     }
 
 
@@ -207,7 +189,6 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
         servsock = new java.net.ServerSocket(port);
         while(continueLoop){
             java.net.Socket sock = servsock.accept();
-            //sock.setSoTimeout(120000);
             int choice = javax.swing.JOptionPane.showConfirmDialog(null, "Do you allow your partner to connect?",
              "Warning", javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
             if(choice == javax.swing.JOptionPane.OK_OPTION){
@@ -293,10 +274,8 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
         try {
             servsock.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        //TransferFile.stopThread();
         continueLoop = false;
     }
     private void receiveClientFileList(java.io.DataInputStream dis, javax.swing.JList<String> serverList, javax.swing.DefaultListModel<String> serverDLM){
@@ -310,7 +289,7 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
             }
             serverList.setModel(serverDLM);
         } catch (Exception e) {
-            //TODO: handle exception
+
         }
     }
     private void sendServerFileList(java.io.DataOutputStream dos, javax.swing.JList<String> clientList){
@@ -322,7 +301,7 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
                 dos.flush();
             }
         } catch (Exception e) {
-            //TODO: handle exception
+            
         }
     }
     public void sendFile(String f){
