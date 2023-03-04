@@ -307,5 +307,4 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
     public void sendFile(String f){
         
     }
-   
 }
