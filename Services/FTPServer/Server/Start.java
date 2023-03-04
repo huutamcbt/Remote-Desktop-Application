@@ -210,7 +210,6 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
         
         // Receive a password from partner
         String request = dis.readUTF();
-        System.out.println("The request: " +request);
         if(isTruePassword(request)){
             
             dos.writeUTF(createValidResponse());
@@ -243,8 +242,6 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
         String[] request = r.split("\n");
         if(request[0].equals("CHECK Password FTP/1.0")){
             String[] pass = request[2].split(" ");
-            java.lang.System.out.println(pass[1]);
-            java.lang.System.out.println(password);
             if(pass[1].equals(password)){
                 return true;
             }

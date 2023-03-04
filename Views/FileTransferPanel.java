@@ -43,8 +43,7 @@ public class FileTransferPanel implements KeyListener, MouseListener {
     private void initFTPServerPanel(){
         //fileTransfer.rootPanel.setPreferredSize(new java.awt.Dimension(MainFrame.rightPnWidth, MainFrame.height - MainFrame.footerHeight));
         new Services.FTPServer.Server.Start(fileTransfer.clientFiles, fileTransfer.clientList, fileTransfer.serverList, fileTransfer.serverDLM);
-        java.lang.System.out.println(Services.FTPServer.Server.Start.getIpAddress());
-        java.lang.System.out.println(Services.FTPServer.Server.Start.getPassword());
+       
         fileTransfer.rootPanel.setLayout(new java.awt.GridBagLayout());
         fileTransfer.rootPanel.setPreferredSize(new java.awt.Dimension(800, 700));
         fileTransfer.gc = new java.awt.GridBagConstraints();
