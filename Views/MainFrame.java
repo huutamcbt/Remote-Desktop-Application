@@ -284,13 +284,13 @@ public class MainFrame  extends javax.swing.JFrame{
         this.addWindowListener(new java.awt.event.WindowAdapter(){
             @Override
             public void windowOpened(java.awt.event.WindowEvent e){
-                java.lang.System.out.println("Opened");
+              
                 lock = false;
                 home.setBackground(new java.awt.Color(125, 161, 239));
             }
             @Override
             public void windowActivated(java.awt.event.WindowEvent e) {
-                System.out.println("Window activate");
+                
                 if(lock == false){
                     if(homeChoice == true ){
                         home.setBackground(new java.awt.Color(125, 161, 239));
