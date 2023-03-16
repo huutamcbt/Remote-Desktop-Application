@@ -92,13 +92,13 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
             for (int i = 0; i < buffer.length; i++) {
                 buffer[i] = 0;
             }
-            if(speed == Services.FTPServer.Speed.SLOW.getSpeed()){
+            if(speed == Constant.Speed.SLOW.getSpeed()){
                 buffer = new byte[1024];
             }
-            if(speed == Services.FTPServer.Speed.MEDIUM.getSpeed()){
+            if(speed == Constant.Speed.MEDIUM.getSpeed()){
                 buffer = new byte[1024*1024];
             }
-            if(speed == Services.FTPServer.Speed.FAST.getSpeed()){
+            if(speed == Constant.Speed.FAST.getSpeed()){
                 buffer = new byte[50*1024*1024];
             }
             
@@ -146,15 +146,15 @@ public class Start extends javax.swing.SwingWorker<Void, Void>{
             try {
                 if(request[0].equals("DOWNLOAD FileName FTP/1.0")){
                     dos.writeUTF(createValidResponse());
-                    return Services.FTPServer.Method.DOWNLOAD.getAbbrev();    
+                    return Constant.Method.DOWNLOAD.getAbbrev();    
                 }
                 if(request[0].equals("ADD FileName FTP/1.0")){
                     dos.writeUTF(createValidResponse());
-                    return Services.FTPServer.Method.ADD.getAbbrev();
+                    return Constant.Method.ADD.getAbbrev();
                 }
                 if(request[0].equals("REMOVE FileName FTP/1.0")){
                     dos.writeUTF(createValidResponse());
-                    return Services.FTPServer.Method.REMOVE.getAbbrev();
+                    return Constant.Method.REMOVE.getAbbrev();
                 }
             } catch (Exception e) {
             }

@@ -1,4 +1,4 @@
-package Services.RDP.Server;
+package Constant;
 
 public enum Commands {
     PRESS_MOUSE(1),

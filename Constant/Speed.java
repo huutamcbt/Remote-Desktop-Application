@@ -1,4 +1,4 @@
-package Services.FTPServer;
+package Constant;
 
 public enum Speed {
     SLOW(1),

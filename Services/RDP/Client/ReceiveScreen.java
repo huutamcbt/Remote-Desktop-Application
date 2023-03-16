@@ -1,5 +1,6 @@
 package Services.RDP.Client;
 
+import Constant.Config;
 
 public class ReceiveScreen extends java.lang.Thread {
     private java.net.Socket socket = null;

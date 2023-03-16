@@ -1,4 +1,4 @@
-package Services.RDP.Client;
+package Constant;
 
 public enum Config {
     LARGE_SCREEN_SIZE(1920, 1080),

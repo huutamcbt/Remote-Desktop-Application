@@ -51,13 +51,13 @@ public class Start implements java.beans.PropertyChangeListener{
                 java.lang.System.out.println(fileLength);
                 dos.writeInt(speed);
                 dos.flush();
-                if(speed == Services.FTPServer.Speed.SLOW.getSpeed()){
+                if(speed == Constant.Speed.SLOW.getSpeed()){
                     buffer = new byte[1024];
                 }
-                if(speed == Services.FTPServer.Speed.MEDIUM.getSpeed()){
+                if(speed == Constant.Speed.MEDIUM.getSpeed()){
                     buffer = new byte[1024*1024];
                 }
-                if(speed == Services.FTPServer.Speed.FAST.getSpeed()){
+                if(speed == Constant.Speed.FAST.getSpeed()){
                     buffer = new byte[50*1024*1024];
                 }
                 receiveFile(fileLength);

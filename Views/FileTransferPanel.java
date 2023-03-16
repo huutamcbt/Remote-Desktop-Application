@@ -325,7 +325,7 @@ public class FileTransferPanel implements KeyListener, MouseListener {
                             int choice = javax.swing.JOptionPane.showConfirmDialog(fileTransfer.rootPanel, "This file already exist. Do you want to replace it?", "Warning", javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                             if(choice == javax.swing.JOptionPane.OK_OPTION){
                                 if(fileTransfer.client != null){
-                                    fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Services.FTPServer.Speed.SLOW.getSpeed(), fileTransfer.serverList.getSelectedIndex());
+                                    fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Constant.Speed.SLOW.getSpeed(), fileTransfer.serverList.getSelectedIndex());
                                 }
                                 continueloop = false;
                                 String fileName = fileTransfer.serverList.getSelectedValue();
@@ -336,7 +336,7 @@ public class FileTransferPanel implements KeyListener, MouseListener {
                         }
                         else{
                             if(fileTransfer.client != null){
-                                fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Services.FTPServer.Speed.SLOW.getSpeed(), fileTransfer.serverList.getSelectedIndex());
+                                fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Constant.Speed.SLOW.getSpeed(), fileTransfer.serverList.getSelectedIndex());
                             }
                             continueloop = false;
                             String fileName = fileTransfer.serverList.getSelectedValue();
@@ -371,7 +371,7 @@ public class FileTransferPanel implements KeyListener, MouseListener {
                             int choice = javax.swing.JOptionPane.showConfirmDialog(fileTransfer.rootPanel, "This file already exist. Do you want to replace it?", "Warning", javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                             if(choice == javax.swing.JOptionPane.OK_OPTION){
                                 if(fileTransfer.client != null){
-                                    fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Services.FTPServer.Speed.MEDIUM.getSpeed(), fileTransfer.serverList.getSelectedIndex());
+                                    fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Constant.Speed.MEDIUM.getSpeed(), fileTransfer.serverList.getSelectedIndex());
                                 }
                                 continueloop = false;
                                 String fileName = fileTransfer.serverList.getSelectedValue();
@@ -382,7 +382,7 @@ public class FileTransferPanel implements KeyListener, MouseListener {
                         }
                         else{
                             if(fileTransfer.client != null){
-                                fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Services.FTPServer.Speed.MEDIUM.getSpeed(), fileTransfer.serverList.getSelectedIndex());
+                                fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Constant.Speed.MEDIUM.getSpeed(), fileTransfer.serverList.getSelectedIndex());
                             }
                             continueloop = false;
                             String fileName = fileTransfer.serverList.getSelectedValue();
@@ -418,7 +418,7 @@ public class FileTransferPanel implements KeyListener, MouseListener {
                             int choice = javax.swing.JOptionPane.showConfirmDialog(fileTransfer.rootPanel, "This file already exist. Do you want to replace it?", "Warning", javax.swing.JOptionPane.OK_CANCEL_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
                             if(choice == javax.swing.JOptionPane.OK_OPTION){
                                 if(fileTransfer.client != null){
-                                    fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Services.FTPServer.Speed.FAST.getSpeed(), fileTransfer.serverList.getSelectedIndex());
+                                    fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Constant.Speed.FAST.getSpeed(), fileTransfer.serverList.getSelectedIndex());
                                 }
                                 
                                 continueloop = false;
@@ -431,7 +431,7 @@ public class FileTransferPanel implements KeyListener, MouseListener {
                         else{
                             
                             if(fileTransfer.client != null){
-                                fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Services.FTPServer.Speed.FAST.getSpeed(), fileTransfer.serverList.getSelectedIndex());
+                                fileTransfer.client.downloadFile(fileTransfer.serverList.getSelectedValue(), file, Constant.Speed.FAST.getSpeed(), fileTransfer.serverList.getSelectedIndex());
                             }
                             
                             continueloop = false;

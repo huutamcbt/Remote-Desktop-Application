@@ -1,4 +1,4 @@
-package Services.FTPServer;
+package Constant;
 
 public enum Method{
     CHECK(0),
